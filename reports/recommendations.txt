@@ -1,0 +1,24 @@
+============================================================
+LEARNING PATH RECOMMENDATIONS
+============================================================
+
+Activity Impact Analysis:
+----------------------------------------
+  • video_watches: 0.836 (High positive impact)
+  • forum_posts: 0.832 (High positive impact)
+  • total_logins: nan (Low negative impact)
+  • quiz_attempts: nan (Low negative impact)
+  • assignment_submissions: nan (Low negative impact)
+
+Key Recommendations:
+----------------------------------------
+  1. Encourage video watches (correlation: 0.836)
+  2. Encourage forum posts (correlation: 0.832)
+
+Student Performance Tiers:
+----------------------------------------
+  • High performers (≥85): 3 students
+  • Mid performers (70-84): 1 students
+  • Need support (<70): 2 students
+
+============================================================

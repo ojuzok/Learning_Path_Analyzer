@@ -1,137 +1,137 @@
-# 📊 Learning Path Analyzer
+# 📊 Анализатор Траекторий Обучения
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 
-## 🎯 Description
+## 🎯 Описание
 
-**Learning Path Analyzer** is an intelligent system for analyzing student learning paths based on LMS (Learning Management System) logs from platforms like Moodle, Canvas, and others. The system identifies which types of educational activities are most effective for different students and provides data-driven recommendations for optimizing learning paths.
+**Learning Path Analyzer (Анализатор Траекторий Обучения)** - это интеллектуальная система для анализа путей обучения студентов на основе логов LMS (систем управления обучением) таких платформ, как Moodle, Canvas и других. Система определяет, какие типы образовательных активностей наиболее эффективны для разных студентов, и предоставляет рекомендации на основе данных для оптимизации траекторий обучения.
 
-### Key Features
+### Ключевые возможности
 
-- 📝 **CSV Log Parsing** - Automatic parsing of LMS activity logs
-- 🔍 **Event Analysis** - Extraction of key events (logins, assignments, forum posts, quizzes)
-- 📈 **Correlation Analysis** - Statistical analysis of relationships between activities and performance
-- 📊 **Visualizations** - Beautiful charts and heatmaps using matplotlib and seaborn
-- 💡 **Smart Recommendations** - AI-driven suggestions for improving learning outcomes
-- 🤖 **CI/CD Automation** - Scheduled analysis and automatic report generation
+- 📝 **Парсинг CSV-логов** - Автоматический разбор логов активности LMS
+- 🔍 **Анализ событий** - Извлечение ключевых событий (входы, задания, форумы, тесты)
+- 📈 **Корреляционный анализ** - Статистический анализ связей между активностями и успеваемостью
+- 📊 **Визуализация** - Красивые графики и тепловые карты с помощью matplotlib и seaborn
+- 💡 **Умные рекомендации** - Предложения на основе ИИ для улучшения результатов обучения
+- 🤖 **CI/CD автоматизация** - Запланированный анализ и автоматическая генерация отчетов
 
-## 📋 Table of Contents
+## 📋 Содержание
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Input Data Format](#input-data-format)
-- [Output Examples](#output-examples)
-- [Project Structure](#project-structure)
-- [CI/CD Pipeline](#cicd-pipeline)
-- [Development](#development)
-- [Testing](#testing)
+- [Установка](#установка)
+- [Использование](#использование)
+- [Формат входных данных](#формат-входных-данных)
+- [Примеры результатов](#примеры-результатов)
+- [Структура проекта](#структура-проекта)
+- [CI/CD конвейер](#cicd-конвейер)
+- [Разработка](#разработка)
+- [Тестирование](#тестирование)
 
-## 🚀 Installation
+## 🚀 Установка
 
-### Prerequisites
+### Предварительные требования
 
-- Python 3.8 or higher
-- pip (Python package manager)
+- Python 3.8 или выше
+- pip (менеджер пакетов Python)
 - Git
 
-### Setup
+### Настройка
 
-1. **Clone the repository**
+1. **Клонируйте репозиторий**
 ```bash
-git clone https://github.com/yourusername/Learning_Path_Analyzer.git
+git clone https://github.com/ojuzok/Learning_Path_Analyzer.git
 cd Learning_Path_Analyzer
 ```
 
-2. **Create virtual environment**
+2. **Создайте виртуальное окружение**
 ```bash
-# On Windows
+# В Windows
 python -m venv venv
 venv\Scripts\activate
 
-# On macOS/Linux
+# В macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. **Install dependencies**
+3. **Установите зависимости**
 ```bash
 pip install -r requirements.txt
 ```
 
-## 📖 Usage
+## 📖 Использование
 
-### Basic Usage
+### Базовое использование
 
-Run the analyzer with the default sample data:
+Запустите анализатор с примером данных по умолчанию:
 
 ```bash
 python -m src.main
 ```
 
-### Custom Data File
+### Свой файл данных
 
-Analyze your own LMS log file:
+Проанализируйте свой собственный файл логов LMS:
 
 ```bash
-python -m src.main --data path/to/your/data.csv --output reports
+python -m src.main --data путь/к/вашим/данным.csv --output reports
 ```
 
-### Command Line Options
+### Опции командной строки
 
 ```
-Options:
-  --data PATH     Path to CSV file with LMS logs (default: data/sample.csv)
-  --output DIR    Directory to save reports (default: reports)
-  -h, --help      Show help message
+Опции:
+  --data PATH     Путь к CSV файлу с логами LMS (по умолчанию: data/sample.csv)
+  --output DIR    Директория для сохранения отчетов (по умолчанию: reports)
+  -h, --help      Показать справочное сообщение
 ```
 
-### Example Output
+### Пример вывода
 
 ```
 ============================================================
-LEARNING PATH ANALYZER
+АНАЛИЗАТОР ТРАЕКТОРИЙ ОБУЧЕНИЯ
 ============================================================
 
-Loading data from data/sample.csv...
-Loaded 47 log entries for 6 students
+Загрузка данных из data/sample.csv...
+Загружено 47 записей логов для 6 студентов
 
-Extracting student features...
-Extracted features for 6 students
+Извлечение признаков студентов...
+Извлечены признаки для 6 студентов
 
-Calculating correlations...
+Расчет корреляций...
 
-Generating visualizations...
-Correlation heatmap saved to reports/correlation_heatmap.png
-Student performance visualization saved to reports/student_performance.png
+Генерация визуализаций...
+Тепловая карта корреляций сохранена в reports/correlation_heatmap.png
+Визуализация успеваемости студентов сохранена в reports/student_performance.png
 
-Generating recommendations...
+Генерация рекомендаций...
 ============================================================
-LEARNING PATH RECOMMENDATIONS
+РЕКОМЕНДАЦИИ ПО ТРАЕКТОРИИ ОБУЧЕНИЯ
 ============================================================
 
-Activity Impact Analysis:
+Анализ влияния активностей:
 ----------------------------------------
-  • video_watches: 0.985 (High positive impact)
-  • quiz_attempts: 0.976 (High positive impact)
-  • forum_posts: 0.945 (High positive impact)
+  • video_watches: 0.985 (Высокое положительное влияние)
+  • quiz_attempts: 0.976 (Высокое положительное влияние)
+  • forum_posts: 0.945 (Высокое положительное влияние)
 ...
 ```
 
-## 📊 Input Data Format
+## 📊 Формат входных данных
 
-The system expects CSV files with the following columns:
+Система ожидает CSV файлы со следующими столбцами:
 
-| Column | Type | Description | Example |
-|--------|------|-------------|---------|
-| `student_id` | string | Unique student identifier | S001 |
-| `timestamp` | datetime | Event timestamp | 2024-01-15 09:00:00 |
-| `event_type` | string | Type of activity | login, quiz_attempt, forum_post, assignment_submission, video_watch |
-| `event_detail` | string | Additional event info | Math_Quiz_1 |
-| `grade` | float | Grade (if applicable) | 85.0 |
+| Столбец | Тип | Описание | Пример |
+|---------|-----|----------|--------|
+| `student_id` | string | Уникальный идентификатор студента | S001 |
+| `timestamp` | datetime | Временная метка события | 2024-01-15 09:00:00 |
+| `event_type` | string | Тип активности | login, quiz_attempt, forum_post, assignment_submission, video_watch |
+| `event_detail` | string | Дополнительная информация о событии | Math_Quiz_1 |
+| `grade` | float | Оценка (если применимо) | 85.0 |
 
-### Sample Data
+### Пример данных
 
 ```csv
 student_id,timestamp,event_type,event_detail,grade
@@ -141,162 +141,162 @@ S001,2024-01-15 10:30:00,forum_post,Discussion_Topic_A,
 S001,2024-01-15 14:00:00,assignment_submission,Essay_Assignment_1,78
 ```
 
-See `data/sample.csv` for a complete example.
+Полный пример см. в `data/sample.csv`.
 
-## 📈 Output Examples
+## 📈 Примеры результатов
 
-The analyzer generates three main outputs:
+Анализатор генерирует три основных результата:
 
-### 1. Correlation Heatmap
-![Correlation Heatmap Example](docs/example_heatmap.png)
+### 1. Тепловая карта корреляций
+![Пример тепловой карты](docs/example_heatmap.png)
 
-Shows correlations between different activities and student performance.
+Показывает корреляции между различными активностями и успеваемостью студентов.
 
-### 2. Performance Visualizations
-![Performance Charts](docs/example_performance.png)
+### 2. Визуализация успеваемости
+![Графики успеваемости](docs/example_performance.png)
 
-Includes:
-- Grade distribution histogram
-- Quiz attempts vs performance scatter plot
-- Forum participation vs performance
-- Video engagement vs performance
+Включает:
+- Гистограмму распределения оценок
+- Диаграмму рассеяния: попытки прохождения тестов vs успеваемость
+- Участие в форумах vs успеваемость
+- Просмотр видео vs успеваемость
 
-### 3. Recommendations Report
+### 3. Отчет с рекомендациями
 
-Text file with detailed analysis and actionable recommendations:
-- Activity impact rankings
-- Student performance tiers
-- Specific improvement suggestions
+Текстовый файл с подробным анализом и практическими рекомендациями:
+- Рейтинг влияния активностей
+- Уровни успеваемости студентов
+- Конкретные предложения по улучшению
 
-## 📁 Project Structure
+## 📁 Структура проекта
 
 ```
 Learning_Path_Analyzer/
 ├── .github/
 │   └── workflows/
-│       └── analysis.yml       # CI/CD pipeline configuration
+│       └── analysis.yml       # Конфигурация CI/CD конвейера
 ├── data/
-│   └── sample.csv            # Sample LMS log data
-├── docs/                     # Documentation and examples
-├── reports/                  # Generated reports (auto-created)
-├── scripts/                  # Utility scripts
+│   └── sample.csv            # Пример данных логов LMS
+├── docs/                     # Документация и примеры
+├── reports/                  # Сгенерированные отчеты (создается автоматически)
+├── scripts/                  # Утилитарные скрипты
 ├── src/
 │   ├── __init__.py
-│   ├── main.py              # Main analysis script
-│   └── utils.py             # Helper functions
+│   ├── main.py              # Основной скрипт анализа
+│   └── utils.py             # Вспомогательные функции
 ├── tests/
 │   ├── __init__.py
-│   └── test_main.py         # Unit tests
+│   └── test_main.py         # Модульные тесты
 ├── .gitignore
 ├── README.md
 └── requirements.txt
 ```
 
-## 🤖 CI/CD Pipeline
+## 🤖 CI/CD Конвейер
 
-This project includes a comprehensive GitHub Actions workflow that:
+Этот проект включает комплексный workflow GitHub Actions, который:
 
-### Features
+### Возможности
 
-✅ **Code Quality Checks**
-- Black code formatting validation
-- Flake8 linting for PEP 8 compliance
+✅ **Проверка качества кода**
+- Валидация форматирования кода с помощью Black
+- Проверка на соответствие PEP 8 с помощью Flake8
 
-✅ **Automated Testing**
-- Pytest unit tests with coverage reports
-- Codecov integration
+✅ **Автоматизированное тестирование**
+- Модульные тесты pytest с отчетами о покрытии
+- Интеграция с Codecov
 
-✅ **Scheduled Analysis** (Unique Feature! 🌟)
-- Runs automatically every day at 9:00 AM UTC
-- Analyzes latest data and generates fresh reports
+✅ **Запланированный анализ** (Уникальная функция! 🌟)
+- Запускается автоматически каждый день в 9:00 UTC
+- Анализирует последние данные и генерирует свежие отчеты
 
-✅ **Manual Triggers**
-- Workflow dispatch with custom data file parameter
-- On-demand report generation
+✅ **Ручные триггеры**
+- Workflow dispatch с параметром выбора файла данных
+- Генерация отчетов по требованию
 
-✅ **Artifact Management**
-- Automatic upload of generated reports
-- 30-day retention for historical analysis
-- Commits results to `reports/` branch
+✅ **Управление артефактами**
+- Автоматическая загрузка сгенерированных отчетов
+- Хранение в течение 30 дней для исторического анализа
+- Коммит результатов в ветку `reports/`
 
-✅ **Summary Reports**
-- GitHub Actions summary with key recommendations
-- Quick insights without downloading artifacts
+✅ **Сводные отчеты**
+- Сводка GitHub Actions с ключевыми рекомендациями
+- Быстрые инсайты без загрузки артефактов
 
-### Trigger the Workflow
+### Запуск Workflow
 
-1. **Automatic** - Pushes to main branch
-2. **Scheduled** - Daily at 9:00 AM UTC
-3. **Manual** - Go to Actions → Learning Path Analysis CI/CD → Run workflow
+1. **Автоматически** - при push в ветку main
+2. **По расписанию** - ежедневно в 9:00 UTC
+3. **Вручную** - Перейдите в Actions → Learning Path Analysis CI/CD → Run workflow
 
-## 🛠 Development
+## 🛠 Разработка
 
-### Running Tests
+### Запуск тестов
 
 ```bash
-# Run all tests
+# Запустить все тесты
 pytest tests/
 
-# Run with coverage
+# Запустить с покрытием
 pytest tests/ --cov=src --cov-report=term-missing
 
-# Run specific test file
+# Запустить конкретный тестовый файл
 pytest tests/test_main.py -v
 ```
 
-### Code Formatting
+### Форматирование кода
 
 ```bash
-# Check formatting
+# Проверить форматирование
 black --check src/ tests/
 
-# Auto-format code
+# Автоматически отформатировать код
 black src/ tests/
 ```
 
-### Linting
+### Линтинг
 
 ```bash
-# Run flake8
+# Запустить flake8
 flake8 src/ tests/ --max-line-length=100
 ```
 
-## 📊 Example Analysis Workflow
+## 📊 Пример рабочего процесса анализа
 
-1. **Collect Data** - Export LMS logs to CSV
-2. **Run Analysis** - Execute `python -m src.main --data your_data.csv`
-3. **Review Reports** - Check generated visualizations and recommendations
-4. **Implement Changes** - Apply suggested learning path optimizations
-5. **Monitor Results** - Re-run analysis periodically to track improvements
+1. **Сбор данных** - Экспортируйте логи LMS в CSV
+2. **Запуск анализа** - Выполните `python -m src.main --data ваши_данные.csv`
+3. **Просмотр отчетов** - Проверьте сгенерированные визуализации и рекомендации
+4. **Внедрение изменений** - Примените предложенные оптимизации траектории обучения
+5. **Мониторинг результатов** - Периодически запускайте анализ для отслеживания улучшений
 
-## 🤝 Contributing
+## 🤝 Участие в проекте
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Приветствуются любые вклады! Не стесняйтесь отправлять Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Сделайте Fork репозитория
+2. Создайте ветку для новой функции (`git checkout -b feature/АмазингФункция`)
+3. Закоммитьте изменения (`git commit -m 'Добавить АмазингФункцию'`)
+4. Отправьте в ветку (`git push origin feature/АмазингФункция`)
+5. Откройте Pull Request
 
-## 📄 License
+## 📄 Лицензия
 
-This project is licensed under the MIT License.
+Этот проект лицензирован под лицензией MIT.
 
-## 👥 Authors
+## 👥 Авторы
 
-- Your Name - Initial work
+- ojuzok - Начальная работа
 
-## 🙏 Acknowledgments
+## 🙏 Благодарности
 
-- Inspired by educational data mining research
-- Built for AI in Education course
-- Thanks to all contributors
+- Вдохновлен исследованиями в области образовательного data mining
+- Создан для курса "ИИ в образовании"
+- Спасибо всем участникам проекта
 
-## 📞 Support
+## 📞 Поддержка
 
-For questions or issues, please open an issue on GitHub.
+По вопросам или проблемам, пожалуйста, откройте issue на GitHub.
 
 ---
 
-**Made with ❤️ for better education through data analysis**
+**Сделано с ❤️ для лучшего образования через анализ данных**
